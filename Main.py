@@ -1,32 +1,8 @@
-import random
+# list compressions
 
-def get_choices():
-    player_choice = input("Enter a choice (rock, paper, scissors): ")
-    options = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(options)
-    choices = {"player": player_choice, "computer": computer_choice}
-    return choices
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-def check_win(player, computer):
-    print(f"You chose {player}, computer chose {computer}")
-    if player == computer:
-        return "It's a tie!"
-    elif player == "rock": 
-        if computer == "scissors":
-            return "Rock smashes scissors! You win!"
-        else:
-            return "Paper covers rock! You lose."
-    elif player == "paper":
-        if computer == "rock":
-            return "Paper covers rock! You win!"
-        else:
-            return "Scissors cuts paper! You lose."
-    elif player == "scissors": 
-        if computer == "paper":
-            return "Scissors cuts paper! You win!"
-        else:
-            return "Rock smashes scissors! You lose."
+numbers_squared = [x**2 for x in numbers]
 
-choices = get_choices()
-result = check_win(choices["player"], choices["computer"])
-print(result)
+print("Original numbers:", numbers)
+print("Squared numbers:", numbers_squared)  
